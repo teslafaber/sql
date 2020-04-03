@@ -12,3 +12,5 @@ SELECT
 FROM users
 
 SELECT *, DAYOFWEEK(birthday_at) as day, DAYNAME(birthday_at) as dayname FROM users;
+
+///////////
