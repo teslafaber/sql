@@ -1,0 +1,14 @@
+Update users set created_at = now();
+
+select * from storehouses_products order by if(value > 0,1,0) desc, value asc;
+
+
+SELECT
+  birthday_at,
+  (
+    (YEAR(CURRENT_DATE) - YEAR(birthday_at)) -                             
+    (DATE_FORMAT(CURRENT_DATE, '%m%d') < DATE_FORMAT(birthday_at, '%m%d')) 
+  ) AS age
+FROM users
+
+SELECT *, DAYOFWEEK(birthday_at) as day, DAYNAME(birthday_at) as dayname FROM users;
